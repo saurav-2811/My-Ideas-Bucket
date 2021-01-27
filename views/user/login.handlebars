@@ -1,0 +1,17 @@
+<div class="card card-body mx-auto mt-5" style="width: 55%">
+        <h3 class="text-center card-header">Account Login</h3>
+        <form action="/user/login" method="POST" >
+        <div class="form-group mt-4">
+            <label for="email">Email</label>
+            <input class="form-control" type="email" name="email" placeholder="enter your email..." required>
+        </div>
+         <div class="form-group mt-4">
+            <label for="password">Password</label>
+            <input class="form-control" type="password" name="password" placeholder="enter your password..." required>
+        </div>
+        <div class=" mt-4 mb-3">
+        <input class="btn btn-success btn-block" style="width: 100%" type="submit" name="submit" value="Login" >
+        </div>
+        <p class="text-center">Not a member...?<a href="/user/register"> sign-up</a></p>
+        </form>
+</div>

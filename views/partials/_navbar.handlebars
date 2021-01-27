@@ -1,0 +1,44 @@
+  <nav class="navbar  navbar-dark bg-dark mb-4">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse " id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        {{#if user}}
+      <li class="nav-item dropdown " style="margin: 0 4px;"></li>>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            My-Ideas
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/ideas">Ideas</a></li>
+            <li><a class="dropdown-item" href="/ideas/add">Add Idea</a></li>
+          </ul>
+          {{/if}}
+        <li class="nav-item">
+          <a class="nav-link" style="margin: 0 4px;" href="/about">About-us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" style="margin: 0 4px;" href="/contact">Contact-Us</a>
+        </li>
+      </ul>
+    </div>
+    <a class="navbar-brand" href="/">My Ideas-Bucket</a>
+     <ul class="navbar-nav">
+       {{#if user}}
+       <li class="nav-item">
+          <a class="nav-link" href="/user/logout">Logout</a>
+        </li>
+          {{else}}
+   <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Login/Sign-up
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="/user/login">Login</a></li>
+            <li><a class="dropdown-item" href="/user/register">Sign-up</a></li>
+          </ul>
+          </ul>
+     {{/if}}
+        
+</nav>

@@ -1,0 +1,21 @@
+{{#if ideas}}
+<div class="card card-header mt-2 "style="margin: 0 2%;">
+<a class="btn  btn-success btn-block mx-auto" type="button" href="/ideas/add">add-more +</a>
+</div>
+{{/if}}
+{{#each ideas}}
+<div class="card card-body mt-2 "style="margin: 0 2%;">
+    <h4>{{title}}</h4>
+    <p><b>Detail:</b> {{Details}} <br> <b>Date:</b> {{date}}</p>
+    <a href="/ideas/edit/{{_id}}" class="btn  btn-dark btn-block">Edit idea</a>
+    <form action="/ideas/{{_id}}?_method=DELETE" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input style="width:100%" class="btn btn-danger btn-block mt-2" type="submit"  value="Delete">
+    </form>
+</div>
+{{else}}
+    <div class="card card-header text-center">
+    <h3>No ideas to remember... <hr></h3>
+    <a href="/ideas/add" class="btn btn-primary ">Add  Idea</a>
+</div>
+{{/each}}
