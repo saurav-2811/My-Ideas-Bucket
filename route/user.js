@@ -3,14 +3,16 @@ const mongoose = require('mongoose');
 const passport =require('passport');
 const bcrypt=require('bcryptjs');
 const router =express.Router();
+const {ensureAuthenticatedlogin}= require('../helpers/auth');
 //loadmodel
 require('../models/User')
 const User=mongoose.model('user');
 //login route
-router.get('/login',(req,res) =>{
-    console.log('login')
+router.get('/login', ensureAuthenticatedlogin, (req,res) =>{
+    console.log('login');
     res.render('user/login');
-});
+})
+
 //login post
 router.post('/login' ,(req,res,next) =>{
     passport.authenticate('local',{
@@ -19,7 +21,7 @@ router.post('/login' ,(req,res,next) =>{
         failureFlash:true,
     })(req,res,next)
 });
-router.get('/register',(req,res)=>{
+router.get('/register', ensureAuthenticatedlogin, (req,res)=>{
     console.log('register')
     res.render('user/register')
 });
